@@ -29,11 +29,11 @@
         <footer class="footer">footer</footer>
 
         <script>
-            const setBodyHeight = () => {
+            const setBodyHeight = (visualViewportHeight) => {
                 document.querySelector(
                     '#visualViewportHeight'
-                ).innerHTML = `visualViewportHeight: ${window.visualViewport.height}px`;
-                document.body.style.height = `${window.visualViewport.height}px`;
+                ).innerHTML = `visualViewportHeight: ${visualViewportHeight}px`;
+                document.body.style.height = `${visualViewportHeight}px`;
             };
 
             (() => {
