@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0,  user-scalable=no, interactive-widget=resizes-content"
+        />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="header">header</header>
+
+        <main class="app">
+            <input type="text" placeholder="focus me! 😜" />
+            <button>click me! 😜</button>
+            <div id="visualViewportHeight"></div>
+            <!-- prettier-ignore -->
+            <article>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto totam blanditiis esse quibusdam voluptas commodi praesentium illo, eum explicabo architecto aspernatur tempora corrupti voluptatem hic dolore sed facere modi officiis ratione est? Ipsum tempore reiciendis suscipit officia impedit? Provident laudantium minima accusamus labore, maxime quis distinctio rerum vero accusantium.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto totam blanditiis esse quibusdam voluptas commodi praesentium illo, eum explicabo architecto aspernatur tempora corrupti voluptatem hic dolore sed facere modi officiis ratione est? Ipsum tempore reiciendis suscipit officia impedit? Provident laudantium minima accusamus labore, maxime quis distinctio rerum vero accusantium.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto totam blanditiis esse quibusdam voluptas commodi praesentium illo, eum explicabo architecto aspernatur tempora corrupti voluptatem hic dolore sed facere modi officiis ratione est? Ipsum tempore reiciendis suscipit officia impedit? Provident laudantium minima accusamus labore, maxime quis distinctio rerum vero accusantium.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto totam blanditiis esse quibusdam voluptas commodi praesentium illo, eum explicabo architecto aspernatur tempora corrupti voluptatem hic dolore sed facere modi officiis ratione est? Ipsum tempore reiciendis suscipit officia impedit? Provident laudantium minima accusamus labore, maxime quis distinctio rerum vero accusantium.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto totam blanditiis esse quibusdam voluptas commodi praesentium illo, eum explicabo architecto aspernatur tempora corrupti voluptatem hic dolore sed facere modi officiis ratione est? Ipsum tempore reiciendis suscipit officia impedit? Provident laudantium minima accusamus labore, maxime quis distinctio rerum vero accusantium.</p>
+            </article>
+        </main>
+
+        <footer class="footer">footer</footer>
+
+        <script>
+            const setBodyHeight = () => {
+                document.querySelector(
+                    '#visualViewportHeight'
+                ).innerHTML = `visualViewportHeight: ${window.visualViewport.height}px`;
+                document.body.style.height = `${window.visualViewport.height}px`;
+            };
+
+            (() => {
+                if (!window.visualViewport) return;
+                setBodyHeight(window.visualViewport.height);
+                window.visualViewport.addEventListener('resize', () => {
+                    setBodyHeight(window.visualViewport.height);
+                });
+            })();
+        </script>
+    </body>
+</html>
